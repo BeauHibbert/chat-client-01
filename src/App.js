@@ -1,3 +1,5 @@
+'use strict';
+
 import React, { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import Messages from './Messages';
@@ -5,11 +7,13 @@ import MessageInput from './MessageInput';
 
 import './App.css';
 
+const PORT = process.env.REACT_APP_SERVER;
+
 function App() {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const newSocket = io(`http://${window.location.hostname}:3002`);
+    const newSocket = io(PORT);
     setSocket(newSocket);
     return () => newSocket.close();
   }, [setSocket]);
