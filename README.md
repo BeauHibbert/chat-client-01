@@ -1,4 +1,4 @@
-# Class 14, Chat Clint
+# Class 14, Chat Client
 
 Created by Beau Hibbert and Ben Choe
 
